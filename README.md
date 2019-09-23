@@ -1,5 +1,9 @@
 # 该仓库利用docker部署cacti
-拉取仓库，执行目录container下的脚本start可部署完成
+# 使用说明
+拉取仓库，请执行以下命令构建镜像nginx:cacti、php:cacti、mysql:cacti   
+docker build -t nginx:cacti -f Dockerfile_nginx .   
+docker build -t php:cacti -f Dockerfile_phpsp .     
+docker build -t mysql:cacti -f Dockerfile .  
 
 ![效果图](https://github.com/linuxwt/cacti_docker/blob/master/jiemian.jpg)
 
