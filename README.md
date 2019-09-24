@@ -2,8 +2,7 @@
 # 使用说明
 首先，拉取仓库，执行脚本   
 bash yum.sh && bash ntp.sh && bash env.sh  
-构建镜像   
-nginx:cacti、php:cacti、mysql:cacti .   
+构建镜像nginx:cacti、php:cacti、mysql:cacti .   
 docker build -t nginx:cacti -f Dockerfile_nginx .  
 docker build -t php:cacti -f Dockerfile_phpsp .      
 docker build -t mysql:cacti -f Dockerfile .      
