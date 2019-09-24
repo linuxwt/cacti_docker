@@ -6,12 +6,13 @@ bash yum.sh && bash ntp.sh && bash env.sh
 docker build -t nginx:cacti -f Dockerfile_nginx .  
 docker build -t php:cacti -f Dockerfile_phpsp .      
 docker build -t mysql:cacti -f Dockerfile .      
-然后，执行脚本bash container/start     \
-最后,登录cacti，在settings里面的PATH栏设置好各个路径，并在General里设置好rrdtool的版本，本仓库选择1.7.x   
-到此完成了cacti的部署
+然后，执行脚本bash container/start    
+最后,登录cacti完成安装，完成安装后登陆cacti,默认账号密码为admin/admin，修改初始密码后登陆，登陆成功,有三处需要设置 
 
-![path](https://github.com/linuxwt/cacti_docker/blob/master/setjpg1.jpg)   
+![path](https://github.com/linuxwt/cacti_docker/blob/master/setjpg1.jpg)    
+
 ![poller](https://github.com/linuxwt/cacti_docker/blob/master/setjpg2.jpg)   
+
 ![general](https://github.com/linuxwt/cacti_docker/blob/master/setjpg3.jpg) 
 
 # 特别注意
