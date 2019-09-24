@@ -1,12 +1,12 @@
 # 该仓库利用docker部署cacti
 # 使用说明
-首先，拉取仓库，执行脚本
-bash yum.sh && bash ntp.sh && bash env.sh
-构建镜像nginx:cacti、php:cacti、mysql:cacti   
-docker build -t nginx:cacti -f Dockerfile_nginx .   
-docker build -t php:cacti -f Dockerfile_phpsp .     
-docker build -t mysql:cacti -f Dockerfile .    
-然后，执行脚本bash container/start   
+首先，拉取仓库，执行脚本   
+bash yum.sh && bash ntp.sh && bash env.sh  
+构建镜像nginx:cacti、php:cacti、mysql:cacti .   
+docker build -t nginx:cacti -f Dockerfile_nginx .  
+docker build -t php:cacti -f Dockerfile_phpsp .      
+docker build -t mysql:cacti -f Dockerfile .      
+然后，执行脚本bash container/start     \
 最后,登录cacti，在settings里面的PATH栏设置好各个路径，并在General里设置好rrdtool的版本，本仓库选择1.7.x
 
 ![效果图](https://github.com/linuxwt/cacti_docker/blob/master/jiemian.jpg)
