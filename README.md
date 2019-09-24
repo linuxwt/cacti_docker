@@ -10,7 +10,9 @@ docker build -t mysql:cacti -f Dockerfile .
 最后,登录cacti，在settings里面的PATH栏设置好各个路径，并在General里设置好rrdtool的版本，本仓库选择1.7.x   
 到此完成了cacti的部署
 
-![效果图](https://github.com/linuxwt/cacti_docker/blob/master/jiemian.jpg)
+![path](https://github.com/linuxwt/cacti_docker/blob/master/setjpg1.jpg)   
+![poller](https://github.com/linuxwt/cacti_docker/blob/master/setjpg2.jpg)   
+![general](https://github.com/linuxwt/cacti_docker/blob/master/setjpg3.jpg) 
 
 # 特别注意
 1、构建mysql镜像的时候脚本start.sh里面的初始化过程一定要正常，sleep时间尽量设置长一点   
