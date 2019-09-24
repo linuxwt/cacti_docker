@@ -60,3 +60,5 @@ yum -y install lrzsz && yum -y install openssh-clients && yum -y install telnet 
 setenforce 0
 sed -i 's/enforcing/disabled/g' /etc/selinux/config
 sed -i 's/enforcing/disabled/g' /etc/sysconfig/selinux
+
+systemctl restart docker
