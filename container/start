@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 添加cacti目录
+cd container
 tar zvxf cacti-1.1.38.tar.gz && mv cacti-1.1.38 cacti
 sed -i '/database_hostname/s/localhost/mysql_cacti/g' cacti/include/config.php
 sed -i '/database_password/s/cactiuser/cactipassword/g' cacti/include/config.php
@@ -15,3 +16,4 @@ docker exec mysql_cacti mysql -uroot -plinuxwt123 -e "create database cacti;use 
 docker cp bug.sh $(docker ps -a | grep mysql_cacti | awk '{print $1}'):/tmp
 docker exec mysql_cacti chmod +x /tmp/bug.sh
 docker exec mysql_cacti /tmp/bug.sh 
+cd -
