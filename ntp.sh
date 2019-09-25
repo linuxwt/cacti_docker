@@ -14,7 +14,7 @@ a=$(echo $ip | awk -F '.' '{print $1}')
 b=$(echo $ip | awk -F '.' '{print $2}')
 c=$(echo $ip | awk -F '.' '{print $3}')
 net="$a.$b.$c.0"
-sed -i 's/192.168.0.101/${ip}/g' container/snmpd.conf
+sed -i "s/192.168.0.101/${ip}/g" container/snmpd.conf
 # 备份ntp配置文件
 [ -f "/etc/ntp.conf" ] && mv /etc/ntp.conf /etc/ntp.confbak
 
