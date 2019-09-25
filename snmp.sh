@@ -8,7 +8,7 @@ systemctl daemon-reload
 
 >/etc/snmp/snmpd.conf
 cat <<EOF>>  /etc/snmp/snmpd.conf
-com2sec notConfigUser  ${ip}     public
+com2sec notConfigUser  default    public
 group   notConfigGroup v1           notConfigUser
 group   notConfigGroup v2c           notConfigUser
 view    systemview    included   .1.3.6.1.2.1.1

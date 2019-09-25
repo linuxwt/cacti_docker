@@ -5,7 +5,6 @@ netcard=$(ls /etc/sysconfig/network-scripts/ | grep ifcfg | grep -v lo)
 card=${netcard//ifcfg-/}
 ip_net=$(ip addr | grep ens33 | grep inet | awk '{print $2}')
 ip=${ip_net//\/24/}
-ntpserver="${ip}"
 
 echo -n "please enter the ip and root password of host which you want to monitor->"
 read client_ip passwd
@@ -24,6 +23,16 @@ EOF
 /usr/bin/expect << EOF
 set timeout 200
 spawn ssh ${client_ip} -o StrictHostKeyChecking=no /root/yum.sh
+expect "password"
+send "${passwd}\r"
+set timeout 200
+expect eof
+exit
+EOF
+
+/usr/bin/expect << EOF
+set timeout 200
+spawn ssh ${client_ip} -o StrictHostKeyChecking=no /root/snmp.sh
 expect "password"
 send "${passwd}\r"
 set timeout 200
