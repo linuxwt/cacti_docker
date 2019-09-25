@@ -50,3 +50,4 @@ cat <<EOF>> /etc/crontab
 0 0,6,12,18 * * * /usr/sbin/ntpdate ntp1.aliyun.com; /sbin/hwclock -w
 EOF
 systemctl restart crond
+yum -y install epel-release  && yum -y install python-pip  &&  pip install -i https://pypi.douban.com/simple docker-compose

@@ -7,7 +7,7 @@ docker build -t nginx:cacti -f Dockerfile_nginx .
 docker build -t php:cacti -f Dockerfile_phpsp .      
 docker build -t mysql:cacti -f Dockerfile .      
 然后，执行脚本bash container/start    
-最后,登录cacti完成安装，完成安装后登陆cacti,默认账号密码为admin/admin，修改初始密码后登陆，登陆成功,有三处需要设置 
+最后,访问http://ip/cacti完成安装，完成安装后登陆cacti,默认账号密码为admin/admin，修改初始密码后登陆，登陆成功,有三处需要设置 
 
 ![path](https://github.com/linuxwt/cacti_docker/blob/master/setjpg1.jpg)    
 
