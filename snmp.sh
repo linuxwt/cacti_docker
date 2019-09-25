@@ -21,5 +21,4 @@ dontLogTCPWrappersConnects yes
 EOF
 
 yum -y install ntpdate
-ntpdate ${ip}
-systemctl restart snmpd
+

@@ -25,6 +25,7 @@ services:
        - ./php-fpm.conf:/usr/local/php/etc/php-fpm.conf
        - ./php.ini:/usr/local/php/etc/php.ini
        - ./snmpd.conf:/etc/snmp/snmpd.conf
+       - ./spine.conf:/etc/spine.conf
     privileged: true
     links:
        - mysql_cacti
