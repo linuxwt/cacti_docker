@@ -15,7 +15,7 @@ docker build -t mysql:cacti -f Dockerfile .
 
 ![general](https://github.com/linuxwt/cacti_docker/blob/master/setjpg3.jpg) 
 
-执行脚本container/poller.sh添加采集数据的计划任务   
+执行脚本bash container/poller.sh添加采集数据的计划任务   
 
 ## 特别注意
 1、构建mysql镜像的时候脚本start.sh里面的初始化过程一定要正常，sleep时间尽量设置长一点   
