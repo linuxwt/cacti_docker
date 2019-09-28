@@ -17,3 +17,4 @@ docker exec mysql_cacti mysql -uroot -plinuxwt123 -e "create database cacti;use 
 docker cp bug.sh $(docker ps -a | grep mysql_cacti | awk '{print $1}'):/tmp
 docker exec mysql_cacti chmod +x /tmp/bug.sh
 docker exec mysql_cacti /tmp/bug.sh 
+echo "*/1 * * * * $(pwd)/poller.sh" >> /etc/crontab && systemctl restart crond
