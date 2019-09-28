@@ -4,7 +4,8 @@
 bash yum.sh && bash ntp.sh && bash env.sh  
 构建镜像nginx:cacti、php:cacti、mysql:cacti     
 docker build -t nginx:cacti -f Dockerfile_nginx .  
-docker build -t php:cacti -f Dockerfile_phpsp .      
+docker build -t php:cacti -f Dockerfile_phpsp .   
+cd mysql        
 docker build -t mysql:cacti -f Dockerfile .      
 然后，执行脚本bash container/start    
 最后,访问http://ip/cacti完成安装，完成安装后登陆cacti,默认账号密码为admin/admin，修改初始密码后登陆，登陆成功,有三处需要设置 
