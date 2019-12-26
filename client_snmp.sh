@@ -3,7 +3,7 @@
 # 获取cacti服务器的ip
 netcard=$(ls /etc/sysconfig/network-scripts/ | grep ifcfg | grep -v lo)
 card=${netcard//ifcfg-/}
-ip_net=$(ip addr | grep ens33 | grep inet | awk '{print $2}')
+ip_net=$(ip addr | grep $card | grep inet | awk '{print $2}')
 ip=${ip_net//\/24/}
 
 echo -n "please enter the ip and root password of host which you want to monitor->"

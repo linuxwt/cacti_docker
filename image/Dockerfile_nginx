@@ -9,7 +9,6 @@ RUN cd /etc/yum.repos.d \
 && mv CentOS7-Base-163.repo CentOS-Base.repo \
 && yum makecache 
 
-
 # 配置相关的依赖
 RUN yum -y install gcc gcc-c++ \
 &&  yum -y install pcre* \

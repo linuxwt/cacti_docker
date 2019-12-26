@@ -25,4 +25,6 @@ docker build -t mysql:cacti -f Dockerfile .
 4、脚本中会依据网卡名字来获取服务器ip，这里的网卡名字为ens33，根据自身服务器网卡名去ntp.sh和client_snmp.sh里修改    
 5、被监控机器需要与cacti服务器时间同步   
 6、如果想要监控某一个主机，需要配置snmp，可以执行脚本bash client_snmp.sh来推送相关脚本到远程的主机上进行配置   
+7、如果使用pip安装docker-compose出错，可以访问地址https://pypi.douban.com/simple,下载whl格式的包，上传至服务器，使用
+pip install *.whl安装   
 
