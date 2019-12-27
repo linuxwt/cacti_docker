@@ -3,6 +3,7 @@
 # 添加cacti目录
 cd container
 tar zvxf cacti-1.1.38.tar.gz && mv cacti-1.1.38 cacti
+chown -R root.root cacti
 sed -i '/database_hostname/s/localhost/mysql_cacti/g' cacti/include/config.php
 sed -i '/database_password/s/cactiuser/cactipassword/g' cacti/include/config.php
 chmod 777 *.log
