@@ -51,7 +51,7 @@ RUN cd /tmp/php-5.6.38/ext/snmp && /usr/local/php/bin/phpize && ./configure --wi
 &&  cd /tmp/php-5.6.38/ext/gmp && /usr/local/php/bin/phpize && ./configure --with-php-config=/usr/local/php/bin/php-config && make && make install \
 &&  cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf \
 &&  useradd -M -s /sbin/nologin php \
-&&  sed -i -e 's@;pid = run/php-fpm.pid@pid = run/php-fpm.pid@g'  -e 's@listen = 127.0.0.1:9000@listen = 0.0.0.0:9000@g' /usr/local/php/etc/php-fpm.conf \
+&&  sed -i -e 's@;pid = run/php-fpm.pid@pid = run/php-fpm.pid@g' -e 's@nobody@php@g' -e 's@listen = 127.0.0.1:9000@listen = 0.0.0.0:9000@g' /usr/local/php/etc/php-fpm.conf \
 &&  sed -i 's@;daemonize = yes@daemonize = no@g' /usr/local/php/etc/php-fpm.conf
 EXPOSE 9000
 
