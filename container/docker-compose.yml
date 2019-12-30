@@ -33,16 +33,18 @@ services:
        - 9000
   mysql_cacti:
     restart: always
-    image: mysql:cacti
+    image: mysql:5.7
     container_name: mysql_cacti
     volumes:
       - /etc/localtime:/etc/localtime
       - /etc/timezone:/etc/timezone
       - $PWD/mysql:/var/lib/mysql
       - $PWD/secure:/var/lib/mysql-files
-      - $PWD/my.cnf:/etc/my.cnf
+      - $PWD/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
       - $PWD/general.log:/var/log/mysql/general.log
       - $PWD/error.log:/var/log/mysql/error.log
       - ./cacti:/usr/local/Nginx/html/cacti
     ports:
       - 33066:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: linuxwt123
